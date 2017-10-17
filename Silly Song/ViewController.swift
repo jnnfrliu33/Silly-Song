@@ -8,14 +8,6 @@
 
 import UIKit
 
-// MARK: - UITextFieldDelegate
-extension ViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return false
-    }
-}
-
 // MARK: - ViewController Class
 class ViewController: UIViewController {
     
@@ -42,6 +34,15 @@ class ViewController: UIViewController {
         lyricsView.text! = lyricsForName(lyricsTemplate: bananaFanaTemplate, fullName: nameField.text!)
     }
 }
+
+// MARK: - UITextFieldDelegate
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+}
+
 // MARK: Silly Song Functions
 
 func shortNameFromName(name: String) -> String {
