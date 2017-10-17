@@ -31,7 +31,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func displayLyrics(_ sender: Any) {
-        lyricsView.text! = lyricsForName(lyricsTemplate: bananaFanaTemplate, fullName: nameField.text!)
+        if nameField.text != "" {
+            lyricsView.text! = lyricsForName(lyricsTemplate: bananaFanaTemplate, fullName: nameField.text!)
+        } else {
+            print ("No name was entered.")
+        }
     }
 }
 
