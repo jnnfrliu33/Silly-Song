@@ -18,14 +18,20 @@ extension ViewController: UITextFieldDelegate {
 
 // MARK: - ViewController Class
 class ViewController: UIViewController {
+    
+    // MARK: Outlets
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var lyricsView: UITextView!
+    
+    // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nameField.delegate = self
     }
+    
+    // MARK: Actions
 
     @IBAction func reset(_ sender: Any) {
         nameField.text = ""
@@ -36,7 +42,7 @@ class ViewController: UIViewController {
         lyricsView.text! = lyricsForName(lyricsTemplate: bananaFanaTemplate, fullName: nameField.text!)
     }
 }
-// MARK: Silly Song Function
+// MARK: Silly Song Functions
 
 func shortNameFromName(name: String) -> String {
     let lowercaseName = name.lowercased()
@@ -62,4 +68,3 @@ let bananaFanaTemplate = [
     "Banana Fana Fo F<SHORT_NAME>",
     "Me My Mo M<SHORT_NAME>",
     "<FULL_NAME>"].joined(separator: "\n")
-
